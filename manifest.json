@@ -1,0 +1,25 @@
+{
+  "name": "Amizone Login",
+  "version": "1.0.0",
+  "description": "An extension to login and remove the popup elements on Amizone",
+  "manifest_version": 3,
+  "author": "Pranjal Gupta",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Amizone Test"
+  },
+  "permissions": ["tabs", "activeTab", "storage"],
+  "icons": {
+    "128": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "js": ["scripts/loginscript.js"],
+      "matches": ["https://s.amizone.net/"]
+    },
+    {
+      "js": ["scripts/removepopup.js"],
+      "matches": ["https://s.amizone.net/Home"]
+    }
+  ]
+}
