@@ -18,5 +18,7 @@ passwordInput.addEventListener("input", (event) => {
 button.addEventListener("click", () => {
   chrome.storage.sync.set({ username: username });
   chrome.storage.sync.set({ password: password });
+  usernameInput.value = "";
+  passwordInput.value = "";
   statusText.textContent = "Saved!";
 });
